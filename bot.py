@@ -42,6 +42,11 @@ def talk_to_me(update, context):
                 "Pluto": ephem.Pluto("2025/03/07")
                 }
     if user_text in planets:
+        planet_input = user_text.lower().copitalize()
+        if planet_input in planets:
+            res=ephem.constellation(planets[planet_input])
+            update.message.reply_text(f"Планета: {planet_input}")
+            update.messege.reply_text(f"Сегодня 07-03-2025{user_text}")
 
 
 
