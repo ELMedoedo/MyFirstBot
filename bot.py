@@ -15,6 +15,17 @@ def name_planet(update, context):
     print('Вызван /planet')
     update.message.reply_text('Введите название планеты на английском - Mercury, Venus, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto')
 
+    planets = {"Mercury": ephem.Mercury("2025/03/07"), 
+            "Venus": ephem.Venus("2025/03/07"), 
+            "Mars" : ephem.Mars("2025/03/07"), 
+            "Saturn": ephem.Saturn("2025/03/07"), 
+            "Uranus": ephem.Uranus("2025/03/07"), 
+            "Neptune": ephem.Neptune("2025/03/07"),
+            "Pluto": ephem.Pluto("2025/03/07")
+            }
+    if user_text in planets:
+
+
 def main():
     mybot = Updater(settings.API_KEY, use_context=True)
 
@@ -33,15 +44,7 @@ def talk_to_me(update, context):
     print(user_text)
     update.message.reply_text(user_text)
 
-    planets = {"Mercury": ephem.Mercury("2025/03/07"), 
-                "Venus": ephem.Venus("2025/03/07"), 
-                "Mars" : ephem.Mars("2025/03/07"), 
-                "Saturn": ephem.Saturn("2025/03/07"), 
-                "Uranus": ephem.Uranus("2025/03/07"), 
-                "Neptune": ephem.Neptune("2025/03/07"),
-                "Pluto": ephem.Pluto("2025/03/07")
-                }
-    
+
 
 
 
